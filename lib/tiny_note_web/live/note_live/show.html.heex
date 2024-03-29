@@ -1,0 +1,27 @@
+<.header>
+  Note <%= @note.id %>
+  <:subtitle>This is a note record from your database.</:subtitle>
+  <:actions>
+    <.link patch={~p"/notes/#{@note}/show/edit"} phx-click={JS.push_focus()}>
+      <.button>Edit note</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Title"><%= @note.title %></:item>
+  <:item title="Body"><%= @note.body %></:item>
+</.list>
+
+<.back navigate={~p"/notes"}>Back to notes</.back>
+
+<.modal :if={@live_action == :edit} id="note-modal" show on_cancel={JS.patch(~p"/notes/#{@note}")}>
+  <.live_component
+    module={TinyNoteWeb.NoteLive.FormComponent}
+    id={@note.id}
+    title={@page_title}
+    action={@live_action}
+    note={@note}
+    patch={~p"/notes/#{@note}"}
+  />
+</.modal>
