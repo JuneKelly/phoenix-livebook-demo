@@ -1,0 +1,7 @@
+# Example Notebook
+
+## Section
+
+```elixir
+TinyNote.Notes.get_note!(1)
+```

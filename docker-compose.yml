@@ -36,6 +36,9 @@ services:
       LIVEBOOK_PORT: 8090
       LIVEBOOK_IFRAME_PORT: 8091
       LIVEBOOK_DEFAULT_RUNTIME: attached:tiny_note@tiny_note:magiccookie
+      LIVEBOOK_HOME: /livebook
+    volumes:
+      - ./livebook:/livebook
 
 volumes:
   postgresdata:
