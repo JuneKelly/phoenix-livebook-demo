@@ -26,4 +26,4 @@ RUN mix local.hex --force && \
 CMD mix deps.get \
   && mix ecto.create \
   && mix ecto.migrate \
-  && iex -erl "-kernel shell_history enabled" -S mix phx.server
+  && mix phx.server

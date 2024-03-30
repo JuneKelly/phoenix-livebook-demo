@@ -14,13 +14,12 @@ services:
 
   tiny_note:
     build: .
+    ports:
+      - "4000:4000"
     depends_on:
       - postgres
     environment:
       MIX_ENV: "dev"
-      DATABASE_URL: postgres://postgres:postgres@postgres:5432/tiny_note_dev
-    ports:
-      - "4000:4000"
     volumes:
       - .:/app
 
