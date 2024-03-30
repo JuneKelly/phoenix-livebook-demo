@@ -11,8 +11,8 @@ We can then use livebook to run code on the phoenix server.
 ## Setup
 
 - Run `docker-compose up`
-- Open [http://localhost:4000/users/register] and create an account
-- Open [http://localhost:4000/notes] and create a few notes
+- Open http://localhost:4000/users/register and create an account
+- Open http://localhost:4000/notes and create a few notes
 - Look in the logs for the livebook container to find the livebook URL
   (`docker-compose logs -f livebook`)
 - Open the livebook URL
