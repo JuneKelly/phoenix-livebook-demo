@@ -3,8 +3,9 @@
 mix deps.get
 mix ecto.create
 mix ecto.migrate
+
+## This works:
 mix phx.server
-# iex --erl "-kernel shell_history enabled" \
-# 	--name tiny_note@tiny_note \
-# 	--cookie magiccookie \
-# 	-S mix phx.server
+
+## But this just exits immediately
+# iex -S mix phx.server
