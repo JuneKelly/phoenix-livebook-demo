@@ -1,0 +1,28 @@
+version: "3"
+services:
+  postgres:
+    image: "postgres:16.2-alpine"
+    shm_size: 128mb
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    restart: always
+    volumes:
+      - "postgresdata:/var/lib/postgresql/data"
+
+  tiny_note:
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      MIX_ENV: "dev"
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/tiny_note_dev
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/app
+
+volumes:
+  postgresdata:
