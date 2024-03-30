@@ -1,4 +1,4 @@
-FROM elixir:1.16.2-otp-25-alpine
+FROM elixir:1.16.2-otp-26-alpine
 
 RUN apk add --update git build-base inotify-tools curl bash
 

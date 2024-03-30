@@ -4,8 +4,5 @@ mix deps.get
 mix ecto.create
 mix ecto.migrate
 
-## This works:
-mix phx.server
-
-## But this just exits immediately
-# iex -S mix phx.server
+iex --name tiny_note@tiny_note --cookie magiccookie \
+	-S mix phx.server -e "Process.sleep(:infinity)"
