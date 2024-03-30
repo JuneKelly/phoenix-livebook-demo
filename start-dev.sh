@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mix archive.install --force github hexpm/hex branch latest
+
 mix deps.get
 mix ecto.create
 mix ecto.migrate
