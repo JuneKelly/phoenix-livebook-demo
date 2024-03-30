@@ -20,6 +20,7 @@ services:
       - postgres
     environment:
       MIX_ENV: "dev"
+      DATABASE_HOST: "postgres"
     volumes:
       - .:/app
 

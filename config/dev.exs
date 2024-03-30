@@ -4,7 +4,7 @@ import Config
 config :tiny_note, TinyNote.Repo,
   username: "postgres",
   password: "postgres",
-  hostname: "postgres",
+  hostname: System.get_env("DATABASE_HOST") || "localhost",
   database: "tiny_note_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
