@@ -22,8 +22,3 @@ USER apprunner
 # install hex + rebar
 RUN mix local.hex --force && \
   mix local.rebar --force
-
-CMD mix deps.get \
-  && mix ecto.create \
-  && mix ecto.migrate \
-  && mix phx.server

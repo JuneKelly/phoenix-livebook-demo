@@ -14,6 +14,7 @@ services:
 
   tiny_note:
     build: .
+    command: bash /app/start-dev.sh
     ports:
       - "4000:4000"
     depends_on:
@@ -23,6 +24,18 @@ services:
       DATABASE_HOST: "postgres"
     volumes:
       - .:/app
+
+  livebook:
+    image: ghcr.io/livebook-dev/livebook
+    ports:
+      - 8090:8090
+      - 8091:8091
+    depends_on:
+      - tiny_note
+    environment:
+      LIVEBOOK_PORT: 8090
+      LIVEBOOK_IFRAME_PORT: 8091
+      LIVEBOOK_DEFAULT_RUNTIME: attached:tiny_note@tiny_note:magiccookie
 
 volumes:
   postgresdata:
