@@ -42,3 +42,8 @@ so we can persist notebook files.
 When we open the livebook UI and evaluate some code, it is actually evaluated
 in the phoenix app node, so we have access to all the modules of our app, and
 can access the database via ecto.
+
+## Notes
+
+- Apparently, for the 'attached' runtime to work, the versions of OTP used by
+  livebook and the other node (in this case, phoenix) must match.
